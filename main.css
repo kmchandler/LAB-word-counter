@@ -37,3 +37,16 @@ form {
   font-size: 1.1em;
   margin-bottom: 7px;
 }
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.dark #text-area {
+  background-color: black;
+}
+
+.dark ::placeholder {
+  color: white;
+}
