@@ -4,19 +4,35 @@ const wordCounter = (value) => {
   // Type into the input and press submit, you will see the value you entered in your console
   console.log(value);
 
+
+  
   if (value) {
     // COMPLETE THE LOGIC 
-    wordCount.innerHTML = `Word Count: 0`; 
+    wordCount.innerHTML = `Word Count: ${value.split(" ").length}`; 
   } else {
     // if the value is empty, set the error message value to "Please input text"
-    error.innerHTML = ""; // UPDATE THIS
+    error.innerHTML = "Please input text"; // UPDATE THIS
   }
 }
 
 // OPTIONAL CHALLENGE
-const toggleMode = (btnText) => {
-  // complete the function
+const toggleMode = (evt) => {
+  const initialText = 'Dark Mode';
+  const btn = document.getElementById('bg-switch');
+  if (btn.textContent.toLowerCase().includes(initialText.toLowerCase())) {
+    btn.innerHTML = 'Light Mode';
+    document.body.classList.add("dark")
+    debugger;
+  } else {
+    btn.innerHTML = initialText;
+    document.body.classList.remove("dark")
+  }
 }
+
+const btn = document.getElementById('bg-switch');
+btn.addEventListener('click', toggleMode);
+  
+
 
 // ************************************************ //
 // **** DO NOT MODIFY THE CODE BELOW THIS LINE **** //
@@ -43,6 +59,6 @@ form.addEventListener("reset", () => {
   wordCount.innerHTML = ""; // on reset, clear the innderHTML
 });
 
-toggleButton.addEventListener("click", (event) => {
-  toggleMode(event.target.innerHTML);
-});
+// toggleButton.addEventListener("click", (event) => {
+//   toggleMode(event.target.innerHTML);
+// });
